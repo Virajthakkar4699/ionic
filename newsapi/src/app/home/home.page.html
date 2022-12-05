@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> NEWS API </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="topic" placeholder="Your Topic"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="search()">Search</ion-button>
+
+  <ion-card *ngFor="let item of newsData">
+    <ion-card-header>
+      <img class="newsimage" [src]="item.urlToImage" />
+      <h3>{{item.title}}</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{item.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
